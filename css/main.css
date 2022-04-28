@@ -1,0 +1,482 @@
+body main {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+body main .empty--row {
+  height: 10vh;
+  width: 100%;
+}
+body main div.wrapper {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  z-index: 20;
+}
+body main div.wrapper .container {
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 2em;
+  align-items: flex-start;
+  width: 50%;
+}
+body main div.wrapper .container .title {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--w);
+}
+body main div.wrapper .container .next--step {
+  text-decoration: none;
+  color: var(--b);
+  background-color: var(--w);
+  width: auto;
+  height: auto;
+  border-radius: var(--border1);
+  box-shadow: 0 5px 0 0 var(--orange);
+  padding: 1em;
+  gap: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
+body main div.wrapper .container .next--step * {
+  font-size: 22px;
+}
+body main div.wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  object-fit: cover;
+}
+body main header {
+  width: 100%;
+  height: 10vh;
+  background: var(--w);
+  box-shadow: 0 5px 0 0 var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+body main header a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  gap: 0.5em;
+  text-decoration: unset;
+  color: var(--blue_dark);
+}
+body main header a i {
+  text-decoration: none;
+}
+body main header a p {
+  text-decoration: underline;
+}
+body main div.content {
+  width: 100%;
+  height: auto;
+  background: var(--main_container);
+  transform: translate(0);
+  overflow: hidden;
+  margin-top: 5px;
+  z-index: 10;
+  transition: all 1s !important;
+  transform-origin: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
+body main div.content .scrollable--content {
+  width: 50%;
+  height: 100%;
+  background: var(--main_container);
+  position: relative;
+  overflow: hidden;
+}
+body main div.content .scrollable--content .col:not(.row .col) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  padding-bottom: 3em;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat {
+  border: 1px solid #e3e3e3;
+  border-radius: var(--border1);
+  overflow: hidden;
+  z-index: 80;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header {
+  height: 8vh;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  background: var(--w);
+  box-shadow: 0 8px 20px 0 #e3e3e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1em;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .title p:not(.who) {
+  color: #e3e3e3;
+  position: relative;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .picture {
+  margin-left: 1em;
+  position: relative;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .picture img {
+  width: 6vh;
+  aspect-ratio: 1;
+  border-radius: 1000px;
+  object-fit: cover;
+  position: relative;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .picture span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 1.5vh;
+  aspect-ratio: 1;
+  background: #13d326;
+  border-radius: 1000px;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages {
+  padding: 1em;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: white;
+  overflow: auto;
+  gap: 5px;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages li {
+  font-weight: initial !important;
+  list-style-type: none;
+  margin: 2px 8px 2px 0;
+  float: left;
+  border-radius: var(--border2);
+  padding: 8px;
+  color: black;
+  position: relative;
+  z-index: 1;
+  background: #eee;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages li.mine {
+  margin: 2px 0 2px 8px;
+  align-self: flex-end;
+  z-index: 0;
+  background: cyan;
+  color: white;
+}
+@supports (mix-blend-mode: screen) {
+  body main div.content .scrollable--content .col:not(.row .col) .chat .messages-container:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#ff8fb2 0%, #a797ff 50%, #00e5ff 100%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+  body main div.content .scrollable--content .col:not(.row .col) .chat .messages li.mine {
+    background: black;
+  }
+}
+body main div.content .scrollable--content .col:not(.row .col) h1 {
+  font-weight: bold;
+  position: relative;
+  color: var(--blue_dark);
+}
+body main div.content .scrollable--content .col:not(.row .col) hr {
+  height: 0.5vh;
+  background: #c3c3c3;
+  width: 25%;
+  border: 0;
+  border-radius: var(--border1);
+}
+body main div.content .scrollable--content .col:not(.row .col) img {
+  width: 50%;
+  height: auto;
+  border-radius: var(--border1);
+}
+body main div.content .scrollable--content .col:not(.row .col) p {
+  text-align: justify;
+}
+body main div.content .scrollable--content .col:not(.row .col) a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  gap: 0.5em;
+  text-decoration: unset;
+  color: var(--orange);
+}
+body main div.content .scrollable--content .col:not(.row .col) a i {
+  text-decoration: none;
+}
+body main div.content .scrollable--content .col:not(.row .col) a p {
+  text-decoration: underline;
+}
+body main div.content .scrollable--content .col:not(.row .col) .card {
+  width: 100%;
+  height: auto;
+  background: var(--blue_light);
+  border-radius: var(--border1);
+  position: relative;
+  color: var(--w);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+body main div.content .scrollable--content .col:not(.row .col) .card div.row {
+  display: grid;
+  grid-template-columns: 33% 1fr;
+  width: 100%;
+  padding: 1em;
+}
+body main div.content .scrollable--content .col:not(.row .col) .card div.row .col p {
+  display: flex;
+  gap: 0.5em;
+  align-items: flex-end;
+}
+body main div.content .scrollable--content .col:not(.row .col) .card div.row div.date {
+  width: 100%;
+}
+body main div.content .scrollable--content .col:not(.row .col) .card div.row div.date p {
+  color: var(--blue_dark);
+}
+body main div.content .scrollable--content .row--button {
+  width: 100%;
+  background: var(--main_container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2em;
+  margin-bottom: 3em;
+  background: var(--blue_dark);
+  padding: 1em 1em calc(1em + 5px);
+  border-radius: var(--border1);
+}
+body main div.content .scrollable--content .row--button h1 {
+  color: var(--w);
+}
+body main div.content .scrollable--content .row--button .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 1em;
+}
+body main div.content .scrollable--content .row--button .buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  gap: 0.5em;
+  outline: none;
+  cursor: pointer;
+  text-decoration: unset;
+  padding: 1em;
+  border-radius: var(--border1);
+  background: var(--main_container);
+  color: var(--blue_dark);
+  border: 1px solid #e3e3e3;
+  width: 100%;
+  box-shadow: 0 5px 0 0 var(--orange);
+}
+body main div.content .scrollable--content .row--button .buttons a i {
+  text-decoration: none;
+}
+body main div.content .scrollable--content .row--button .buttons a p {
+  text-decoration: underline;
+}
+body main #content_federation,
+body main #content_me {
+  transform: translate(100%);
+  transform-origin: right;
+  height: 200vh;
+  padding-top: calc(10vh + 5px);
+  width: 100%;
+  z-index: 99;
+  background: var(--main_container);
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  transition: all 1s !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+body main #content_federation .contentDiv,
+body main #content_me .contentDiv {
+  width: 50%;
+  height: 100%;
+}
+body main #content_federation .contentDiv .goBack,
+body main #content_me .contentDiv .goBack {
+  display: flex;
+  cursor: pointer;
+}
+body main #content_federation .contentDiv .goBack a,
+body main #content_me .contentDiv .goBack a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  gap: 0.5em;
+  text-decoration: unset;
+  color: var(--blue_dark);
+}
+body main #content_federation .contentDiv .goBack a i,
+body main #content_me .contentDiv .goBack a i {
+  text-decoration: none;
+}
+body main #content_federation .contentDiv .goBack a p,
+body main #content_me .contentDiv .goBack a p {
+  text-decoration: underline;
+}
+body main #content_federation .contentDiv .mainContent,
+body main #content_me .contentDiv .mainContent {
+  padding-top: 2em;
+}
+body main #content_federation .contentDiv .mainContent p,
+body main #content_me .contentDiv .mainContent p {
+  text-align: justify;
+  padding: 1em 0;
+}
+body main #content_federation .contentDiv .mainContent img,
+body main #content_me .contentDiv .mainContent img {
+  width: 50%;
+  height: auto;
+  border-radius: var(--border1);
+  margin-top: 1em;
+}
+body main footer {
+  z-index: 20;
+}
+body main div.footer--copyright {
+  height: 5vh;
+  width: 100%;
+  background: var(--main_container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  z-index: 20;
+  position: absolute;
+}
+body main div.footer--copyright p {
+  color: var(--secondary_title);
+}
+body main div.footer--copyright a {
+  color: var(--link_visited);
+}
+body main div.footer--copyright a:active {
+  color: var(--link_visited);
+}
+
+@media all and (max-width: 1000px) {
+  .container {
+    width: 80% !important;
+  }
+
+  .scrollable--content {
+    width: 80% !important;
+  }
+}
+@media all and (max-width: 500px) {
+  .container {
+    width: 85% !important;
+  }
+
+  .card .row {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .buttons {
+    flex-direction: column !important;
+  }
+
+  #content_federation .contentDiv,
+#content_me .contentDiv {
+    width: 85% !important;
+  }
+
+  .mainContent img {
+    width: 100% !important;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

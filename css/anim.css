@@ -1,0 +1,8 @@
+.slide_out_1{
+    /*transform: scaleX(0);*/
+    transform: translate(-100%) !important;
+}
+.slide_in_1{
+    /*transform: scaleX(1)!important;*/
+    transform: translate(0) !important;
+}
