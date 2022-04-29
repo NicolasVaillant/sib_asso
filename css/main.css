@@ -1,7 +1,11 @@
+body {
+  overflow: hidden;
+}
 body main {
   width: 100%;
   height: auto;
   position: relative;
+  overflow: hidden;
 }
 body main .empty--row {
   height: 10vh;
@@ -434,7 +438,6 @@ body main div.footer--copyright {
   align-content: center;
   flex-direction: row;
   z-index: 20;
-  position: absolute;
 }
 body main div.footer--copyright p {
   color: var(--secondary_title);

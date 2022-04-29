@@ -30,11 +30,12 @@
 }
 
 body{
+    overflow: hidden;
     main{
         width: 100%;
         height: auto;
         position: relative;
-        //overflow-x: hidden;
+        overflow: hidden;
 
         .empty--row{
             height: 10vh;
@@ -440,7 +441,7 @@ body{
             background: var(--main_container);
             @include tn-flex-row;
             z-index: 20;
-            position: absolute;
+            //position: absolute;
 
             p{
                 color: var(--secondary_title);
