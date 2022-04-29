@@ -35,6 +35,17 @@ body main div.wrapper .container .title {
   font-weight: bold;
   color: var(--w);
 }
+body main div.wrapper .container .title .post {
+  background: #ffffff78;
+  padding: 0.2em 1em;
+  border-radius: 1000px;
+  margin-top: 0.5em;
+  color: var(--blue_dark);
+  width: fit-content;
+}
+body main div.wrapper .container .title .post i {
+  font-size: 80%;
+}
 body main div.wrapper .container .next--step {
   text-decoration: none;
   color: var(--b);
@@ -132,6 +143,7 @@ body main div.content .scrollable--content .col:not(.row .col) .chat {
   border-radius: var(--border1);
   overflow: hidden;
   z-index: 80;
+  width: 100%;
 }
 body main div.content .scrollable--content .col:not(.row .col) .chat .header {
   height: 8vh;
@@ -145,10 +157,19 @@ body main div.content .scrollable--content .col:not(.row .col) .chat .header {
   justify-content: center;
   align-content: center;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between !important;
+  gap: 1em;
+  padding: 0 1em;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
   gap: 1em;
 }
-body main div.content .scrollable--content .col:not(.row .col) .chat .header .title {
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .left .title {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,29 +178,39 @@ body main div.content .scrollable--content .col:not(.row .col) .chat .header .ti
   justify-content: flex-start;
   align-items: flex-start;
 }
-body main div.content .scrollable--content .col:not(.row .col) .chat .header .title p:not(.who) {
-  color: #e3e3e3;
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .left .title p:not(.who) {
+  color: #bdbcbc;
   position: relative;
 }
-body main div.content .scrollable--content .col:not(.row .col) .chat .header .picture {
-  margin-left: 1em;
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .left .picture {
   position: relative;
 }
-body main div.content .scrollable--content .col:not(.row .col) .chat .header .picture img {
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .left .picture img {
   width: 6vh;
   aspect-ratio: 1;
   border-radius: 1000px;
   object-fit: cover;
   position: relative;
 }
-body main div.content .scrollable--content .col:not(.row .col) .chat .header .picture span {
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .left .picture span {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 5px;
   width: 1.5vh;
   aspect-ratio: 1;
   background: #13d326;
   border-radius: 1000px;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header a {
+  background: none;
+  text-decoration: none;
+  color: var(--blue_dark);
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header a p {
+  text-decoration: none;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .header .small-device {
+  display: none;
 }
 body main div.content .scrollable--content .col:not(.row .col) .chat .messages-container {
   position: relative;
@@ -278,8 +309,6 @@ body main div.content .scrollable--content .col:not(.row .col) a p {
 body main div.content .scrollable--content .col:not(.row .col) .card {
   width: 100%;
   height: auto;
-  background: var(--blue_light);
-  border-radius: var(--border1);
   position: relative;
   color: var(--w);
   font-size: 20px;
@@ -288,23 +317,46 @@ body main div.content .scrollable--content .col:not(.row .col) .card {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  gap: 0.5em;
 }
 body main div.content .scrollable--content .col:not(.row .col) .card div.row {
   display: grid;
   grid-template-columns: 33% 1fr;
   width: 100%;
   padding: 1em;
+  background: var(--blue_light);
+  border-radius: var(--border1);
+  align-items: center;
+}
+body main div.content .scrollable--content .col:not(.row .col) .card div.row .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+body main div.content .scrollable--content .col:not(.row .col) .card div.row .col a {
+  font-weight: initial;
+  text-decoration: underline;
+}
+body main div.content .scrollable--content .col:not(.row .col) .card div.row .col a i {
+  font-size: initial;
+  text-decoration: none;
 }
 body main div.content .scrollable--content .col:not(.row .col) .card div.row .col p {
   display: flex;
   gap: 0.5em;
   align-items: flex-end;
+  font-weight: initial;
 }
 body main div.content .scrollable--content .col:not(.row .col) .card div.row div.date {
   width: 100%;
 }
 body main div.content .scrollable--content .col:not(.row .col) .card div.row div.date p {
   color: var(--blue_dark);
+  background: #ffffff1f;
+  padding: 0.5em;
+  border-radius: var(--border1);
+  font-weight: initial;
 }
 body main div.content .scrollable--content .row--button {
   width: 100%;
@@ -426,7 +478,7 @@ body main footer {
   z-index: 20;
 }
 body main div.footer--copyright {
-  height: 5vh;
+  height: 15vh;
   width: 100%;
   background: var(--main_container);
   display: flex;
@@ -435,6 +487,7 @@ body main div.footer--copyright {
   align-content: center;
   flex-direction: row;
   z-index: 20;
+  gap: 1em;
 }
 body main div.footer--copyright p {
   color: var(--secondary_title);
@@ -451,7 +504,8 @@ body main div.footer--copyright a:active {
     width: 80% !important;
   }
 
-  .scrollable--content {
+  .scrollable--content,
+#content_me .contentDiv {
     width: 80% !important;
   }
 }
@@ -476,6 +530,22 @@ body main div.footer--copyright a:active {
 
   .mainContent img {
     width: 100% !important;
+  }
+
+  .col:not(.row .col) p {
+    text-align: initial !important;
+  }
+
+  .chat .header {
+    padding: 0 0.5em !important;
+  }
+  .chat .header .big-device {
+    display: none !important;
+  }
+  .chat .header .small-device {
+    display: flex !important;
+    font-size: 1.2em;
+    padding: 0.5em;
   }
 }
 

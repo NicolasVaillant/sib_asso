@@ -6,6 +6,22 @@ const content_federation = document.querySelector('#content_federation')
 const content = document.querySelector('.content')
 const content_me = document.querySelector('#content_me')
 
+let swiper
+
+if (window.matchMedia("(max-width: 500px)").matches) {
+    swiper = new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
+    });
+} else {
+    swiper = new Swiper(".mySwiper", {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+}
+
 function changeTab(to){
     const scroll = window.scrollY
     if(to === "me"){

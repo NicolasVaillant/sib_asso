@@ -1,5 +1,5 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -13,12 +13,16 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/anim.css">
     <link rel="stylesheet" href="css/root.css">
-
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/author.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
     <script src="js/script.js" defer></script>
 
     <title>Sibylle | Accueil</title>
 </head>
-
 <body>
     <main>
         <div class="wrapper">
@@ -26,6 +30,10 @@
                 <div class="title">
                     <h1>Hello 👋</h1>
                     <p>Je m'appelle Sibylle.</p>
+                    <p class="post">
+                        <i class="fas fa-tag"></i>
+                        Pôle Com
+                    </p>
                 </div>
                 <a class="next--step" href="#scroll_to">
                     <p>Découvrir ma candidature pour la Fédération des Etudiants</p>
@@ -67,17 +75,25 @@
                 <div class="col" id="qs">
                     <h1>Qui suis-je ?</h1>
                     <hr>
-<!--                    <img src="ressources/img/cover.jpg" alt="Cover picture">-->
                     <div class="chat">
                         <div class="header">
-                            <div class="picture">
-                                <img src="ressources/img/cover.jpg" alt="Cover picture in chat">
-                                <span></span>
+                            <div class="left">
+                                <div class="picture">
+                                    <img src="ressources/img/cover.jpg" alt="Cover picture in chat">
+                                    <span></span>
+                                </div>
+                                <div class="title">
+                                    <p class="who">Sibylle</p>
+                                    <p>En ligne maintenant</p>
+                                </div>
                             </div>
-                            <div class="title">
-                                <p class="who">Sibylle</p>
-                                <p>En ligne maintenant</p>
-                            </div>
+                            <a class="button-to-author big-device" href="https://www.messenger.com/t/100010187892505">
+                                <p>Me contacter</p>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a class="button-to-author small-device" href="https://www.messenger.com/t/100010187892505">
+                                <i class="fab fa-facebook-messenger"></i>
+                            </a>
                         </div>
                         <div class="messages-container">
                             <ol class="messages">
@@ -104,10 +120,6 @@
                             </ol>
                         </div>
                     </div>
-                    <a href="https://www.messenger.com/t/100010187892505">
-                        <p>Me contacter</p>
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
                 </div>
                 <div class="col" id="cv">
                     <h1>Mon CV associatif</h1>
@@ -137,7 +149,7 @@
                                 <p>2020 - 2021</p>
                             </div>
                             <div class="col">
-                                <p>Pôle sponsor à la Navy (1 an)</p>
+                                <p>Pôle sponsor à la Navy</p>
                             </div>
                         </div>
                     </div>
@@ -215,12 +227,51 @@
                 <div class="mainContent">
                     <h1>Pourquoi moi ?</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab corporis earum libero reiciendis reprehenderit saepe voluptas! Ipsum praesentium, veritatis! A adipisci alias aspernatur, assumenda consequatur, dolorem illum ipsa itaque iure, laboriosam minima nobis obcaecati qui quibusdam rem sit voluptate voluptates? A aliquid animi cum, deserunt dolore, doloribus earum excepturi fuga illo in incidunt labore maiores obcaecati odit pariatur quae quidem quod repellat reprehenderit soluta tempora tempore, tenetur ullam veritatis vitae. Ab adipisci aliquam cumque cupiditate eligendi labore magni necessitatibus numquam obcaecati repudiandae? Consequatur cupiditate dicta hic, id libero minus molestias nostrum officia quia quis rerum sequi voluptatibus. Aliquam atque autem debitis, earum error explicabo, illum in molestiae quaerat quisquam reprehenderit temporibus totam vitae! Consequatur, ex, quasi. Atque cum cupiditate debitis distinctio doloremque doloribus esse est excepturi facilis fugiat hic illo incidunt inventore labore maxime natus nulla odio officia officiis, quasi quo recusandae repellat saepe soluta unde veniam voluptas! Ab accusamus ad aperiam at aut cumque cupiditate doloremque eum, explicabo fugiat inventore ipsam itaque iusto maxime minima minus natus necessitatibus nemo nobis odit officiis pariatur praesentium provident quae quasi quo quod quos ratione reiciendis, rem soluta tempora temporibus tenetur vel, voluptas voluptate voluptatibus? Commodi cum deleniti dolores iure laudantium numquam ut?</p>
-                    <img src="ressources/img/cover.jpg" alt="Cover picture">
+    
+                    <div class="col">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="ressources/img/cover.jpg" alt="Cover picture">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="ressources/img/sib_photo.jpg" alt="Prise de photo">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="ressources/img/sib_musee.jpg" alt="Prise au musee">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="ressources/img/sib_scout.jpg" alt="Prise en scoutisme">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="ressources/img/sib_light.jpg" alt="Prise de face">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="ressources/img/sib_navy.jpg" alt="Pull Navy">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="ressources/img/sib_picture.jpg" alt="Avec appareil">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="ressources/img/sib_dress.jpg" alt="Prise face">
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="footer--copyright">
-            <p>Made by <a href="https://github.com/NicolasVaillant">@NicolasVaillant</a></p>
+            <a class="button-to-author" href="https://github.com/NicolasVaillant">
+                <i class="fab fa-github"></i>
+                Made by NicolasVaillant
+            </a>
+            <a class="button-to-author" href="mailto:contact@nicolasvaillant.net">
+                <i class="fas fa-at"></i>
+                Me contacter
+            </a>
         </div>
     </main>
 </body>

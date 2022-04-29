@@ -60,6 +60,19 @@ body{
                     font-size: 32px;
                     font-weight: bold;
                     color: var(--w);
+
+                    .post{
+                        background: #ffffff78;
+                        padding: 0.2em 1em;
+                        border-radius: 1000px;
+                        margin-top: 0.5em;
+                        color: var(--blue_dark);
+                        width: fit-content;
+
+                        i{
+                            font-size: 80%;
+                        }
+                    }
                 }
                 .next--step{
                     text-decoration: none;
@@ -149,6 +162,7 @@ body{
                         border-radius: var(--border1);
                         overflow: hidden;
                         z-index: 80;
+                        width: 100%;
 
                         .header{
                             height: 8vh;
@@ -158,40 +172,57 @@ body{
                             background: var(--w);
                             box-shadow: 0 8px 20px 0 #e3e3e3;
                             @include tn-flex-row;
-                            justify-content: flex-start;
+                            justify-content: space-between!important;
                             gap: 1em;
+                            padding: 0 1em;
 
-                            .title{
-                                @include tn-flex-column;
-                                justify-content: flex-start;
-                                align-items: flex-start;
+                            .left{
+                                @include tn-flex-row;
+                                gap: 1em;
+                                .title{
+                                    @include tn-flex-column;
+                                    justify-content: flex-start;
+                                    align-items: flex-start;
 
-                                p:not(.who){
-                                    color: #e3e3e3;
+                                    p:not(.who){
+                                        color: #bdbcbc;
+                                        position: relative;
+                                        //margin-left: 1em;
+                                    }
+                                }
+
+                                .picture{
                                     position: relative;
-                                    //margin-left: 1em;
+                                    img{
+                                        width: 6vh;
+                                        aspect-ratio: 1;
+                                        border-radius: 1000px;
+                                        object-fit: cover;
+                                        position: relative;
+                                    }
+                                    span{
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 5px;
+                                        width: 1.5vh;
+                                        aspect-ratio: 1;
+                                        background: #13d326;
+                                        border-radius: 1000px;
+                                    }
                                 }
                             }
 
-                            .picture{
-                                margin-left: 1em;
-                                position: relative;
-                                img{
-                                    width: 6vh;
-                                    aspect-ratio: 1;
-                                    border-radius: 1000px;
-                                    object-fit: cover;
-                                    position: relative;
+                            a{
+                                background: none;
+                                text-decoration: none;
+                                color: var(--blue_dark);
+
+                                p{
+                                    text-decoration: none;
                                 }
-                                span{
-                                    position: absolute;
-                                    right: 0;
-                                    bottom: 0;
-                                    width: 1.5vh;
-                                    aspect-ratio: 1;
-                                    background: #13d326;
-                                    border-radius: 1000px;
-                                }
+                            }
+                            .small-device{
+                                display: none;
                             }
                         }
 
@@ -246,7 +277,10 @@ body{
                                 top: 0;
                                 height: 100%;
                                 width: 100%;
-                                background: linear-gradient(rgb(255, 143, 178) 0%, rgb(167, 151, 255) 50%, rgb(0, 229, 255) 100%);
+                                background: linear-gradient(
+                                                rgb(255, 143, 178) 0%,
+                                                rgb(167, 151, 255) 50%,
+                                                rgb(0, 229, 255) 100%);
                                 mix-blend-mode: screen;
                                 pointer-events: none;
                             }
@@ -299,24 +333,40 @@ body{
                     .card{
                         width: 100%;
                         height: auto;
-                        background: var(--blue_light);
-                        border-radius: var(--border1);
                         position: relative;
                         color: var(--w);
                         font-size: 20px;
                         @include tn-flex-column;
+                        gap: .5em;
 
                         div.row{
                             display: grid;
                             grid-template-columns: 33% 1fr;
                             width: 100%;
                             padding: 1em;
+                            background: var(--blue_light);
+                            border-radius: var(--border1);
+                            align-items: center;
 
                             .col{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                width: 100%;
+
+                                a{
+                                    font-weight: initial;
+                                    text-decoration: underline;
+                                    i{
+                                        font-size: initial;
+                                        text-decoration: none;
+                                    }
+                                }
                                 p{
                                     display: flex;
                                     gap: 0.5em;
                                     align-items: flex-end;
+                                    font-weight: initial;
                                 }
                             }
 
@@ -325,6 +375,10 @@ body{
 
                                 p{
                                     color: var(--blue_dark);
+                                    background: #ffffff1f;
+                                    padding: 0.5em;
+                                    border-radius: var(--border1);
+                                    font-weight: initial;
                                 }
                             }
                         }
@@ -436,11 +490,12 @@ body{
         }
 
         div.footer--copyright{
-            height: 5vh;
+            height: 15vh;
             width: 100%;
             background: var(--main_container);
             @include tn-flex-row;
             z-index: 20;
+            gap: 1em;
             //position: absolute;
 
             p{
@@ -460,7 +515,8 @@ body{
     .container{
         width: 80% !important;
     }
-    .scrollable--content{
+    .scrollable--content,
+    #content_me .contentDiv{
         width: 80% !important;
     }
 }
@@ -481,5 +537,23 @@ body{
     }
     .mainContent img{
         width: 100% !important;
+    }
+    .col:not(.row .col){
+        p{
+            text-align: initial!important;
+        }
+    }
+    .chat{
+        .header{
+            padding: 0 0.5em!important;
+            .big-device{
+                display: none!important;
+            }
+            .small-device{
+                display: flex!important;
+                font-size: 1.2em;
+                padding: 0.5em;
+            }
+        }
     }
 }
