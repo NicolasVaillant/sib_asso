@@ -347,6 +347,7 @@ body{
                             background: var(--blue_light);
                             border-radius: var(--border1);
                             align-items: center;
+                            gap: 0.5em;
 
                             .col{
                                 display: flex;
@@ -473,7 +474,7 @@ body{
 
                     p{
                         text-align: justify;
-                        padding: 1em 0;
+                        padding: 1em 0 3em 0;
                     }
 
                     img{

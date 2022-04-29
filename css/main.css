@@ -327,6 +327,7 @@ body main div.content .scrollable--content .col:not(.row .col) .card div.row {
   background: var(--blue_light);
   border-radius: var(--border1);
   align-items: center;
+  gap: 0.5em;
 }
 body main div.content .scrollable--content .col:not(.row .col) .card div.row .col {
   display: flex;
@@ -465,7 +466,7 @@ body main #content_me .contentDiv .mainContent {
 body main #content_federation .contentDiv .mainContent p,
 body main #content_me .contentDiv .mainContent p {
   text-align: justify;
-  padding: 1em 0;
+  padding: 1em 0 3em 0;
 }
 body main #content_federation .contentDiv .mainContent img,
 body main #content_me .contentDiv .mainContent img {
