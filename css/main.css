@@ -233,6 +233,7 @@ body main div.content .scrollable--content .col:not(.row .col) .chat .messages {
   align-items: flex-start;
   background: white;
   overflow: auto;
+  overflow-x: hidden;
   gap: 5px;
 }
 body main div.content .scrollable--content .col:not(.row .col) .chat .messages li {
@@ -253,6 +254,41 @@ body main div.content .scrollable--content .col:not(.row .col) .chat .messages l
   z-index: 0;
   background: cyan;
   color: white;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages li.reply {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  padding: 8px 0;
+  font-weight: initial !important;
+  width: 100%;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages li.reply .label,
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages li.reply .from,
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages li.reply .text {
+  font-weight: initial !important;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages li.reply .label i {
+  font-size: 80%;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages li.reply .from {
+  padding: 8px;
+  background: #eeeeee54;
+  margin: 0 0 25px 0;
+  width: fit-content;
+  border-radius: var(--border2);
+  font-weight: initial !important;
+}
+body main div.content .scrollable--content .col:not(.row .col) .chat .messages li.reply .text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--border2);
+  padding: 8px;
+  color: black;
+  z-index: 1;
+  background: #eee;
+  font-weight: initial !important;
 }
 @supports (mix-blend-mode: screen) {
   body main div.content .scrollable--content .col:not(.row .col) .chat .messages-container:after {
@@ -415,7 +451,7 @@ body main #content_me {
   transform: translate(100%);
   transform-origin: right;
   height: 200vh;
-  padding-top: calc(10vh + 5px);
+  padding: calc(10vh + 5px) 0;
   width: 100%;
   z-index: 99;
   background: var(--main_container);
@@ -481,7 +517,7 @@ body main footer {
 body main div.footer--copyright {
   height: 15vh;
   width: 100%;
-  background: var(--main_container);
+  background: #f4f4f4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -547,6 +583,9 @@ body main div.footer--copyright a:active {
     display: flex !important;
     font-size: 1.2em;
     padding: 0.5em;
+  }
+  .chat li.reply .from {
+    margin: 0 0 45px 0 !important;
   }
 }
 

@@ -244,6 +244,7 @@ body{
                             align-items: flex-start;
                             background: white;
                             overflow: auto;
+                            overflow-x: hidden;
                             gap: 5px;
 
                             li {
@@ -264,6 +265,46 @@ body{
                                     z-index: 0;
                                     background: cyan;
                                     color: white;
+                                }
+                            }
+                            li.reply{
+                                display: flex;
+                                flex-direction: column;
+                                background: none;
+                                padding: 8px 0;
+                                font-weight: initial!important;
+                                width: 100%;
+
+                                .label,
+                                .from,
+                                .text{
+                                    font-weight: initial!important;
+                                }
+                                .label{
+                                    i{
+                                        font-size: 80%;
+                                    }
+                                }
+                                .from{
+                                    padding: 8px;
+                                    background: #eeeeee54;
+                                    margin: 0 0 25px 0;
+                                    width: fit-content;
+                                    border-radius: var(--border2);
+                                    font-weight: initial !important;
+                                }
+                                .text{
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 0;
+                                    //background: red;
+                                    border-radius: var(--border2);
+                                    padding: 8px;
+                                    color: black;
+                                    //position: relative;
+                                    z-index: 1;
+                                    background: #eee;
+                                    font-weight: initial !important;
                                 }
                             }
                         }
@@ -438,7 +479,7 @@ body{
             transform: translate(100%);
             transform-origin: right;
             height: 200vh;
-            padding-top: calc(10vh + 5px);
+            padding: calc(10vh + 5px) 0;
             width: 100%;
             z-index: 99;
             background: var(--main_container);
@@ -493,7 +534,7 @@ body{
         div.footer--copyright{
             height: 15vh;
             width: 100%;
-            background: var(--main_container);
+            background: #f4f4f4;
             @include tn-flex-row;
             z-index: 20;
             gap: 1em;
@@ -554,6 +595,12 @@ body{
                 display: flex!important;
                 font-size: 1.2em;
                 padding: 0.5em;
+            }
+        }
+
+        li.reply{
+            .from{
+                margin: 0 0 45px 0!important;
             }
         }
     }
