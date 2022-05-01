@@ -585,7 +585,11 @@ body main div.footer--copyright a:active {
     padding: 0.5em;
   }
   .chat li.reply .from {
-    margin: 0 0 45px 0 !important;
+    margin: 0 0 50px 0 !important;
+  }
+
+  .footer--copyright {
+    flex-direction: column !important;
   }
 }
 
