@@ -502,7 +502,48 @@ body main #content_me .contentDiv .mainContent {
 body main #content_federation .contentDiv .mainContent p,
 body main #content_me .contentDiv .mainContent p {
   text-align: justify;
-  padding: 1em 0 3em 0;
+  font-weight: initial !important;
+  padding: 1em 0;
+  line-height: 1.5;
+}
+body main #content_federation .contentDiv .mainContent h2,
+body main #content_me .contentDiv .mainContent h2 {
+  font-weight: bold;
+  color: var(--blue_light);
+}
+body main #content_federation .contentDiv .mainContent ul,
+body main #content_me .contentDiv .mainContent ul {
+  padding: 1em;
+  margin: 1em 0;
+  background: var(--blue_light);
+  color: var(--w);
+  border-radius: var(--border1);
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+}
+body main #content_federation .contentDiv .mainContent ul li,
+body main #content_me .contentDiv .mainContent ul li {
+  list-style: none;
+  font-weight: initial !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+}
+body main #content_federation .contentDiv .mainContent ul li span,
+body main #content_me .contentDiv .mainContent ul li span {
+  background: var(--blue_dark);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background: var(--blue_dark);
+  width: fit-content;
+  padding: 0.5em 1em;
+  border-radius: var(--border1);
 }
 body main #content_federation .contentDiv .mainContent img,
 body main #content_me .contentDiv .mainContent img {
@@ -542,7 +583,8 @@ body main div.footer--copyright a:active {
   }
 
   .scrollable--content,
-#content_me .contentDiv {
+#content_me .contentDiv,
+#content_federation .contentDiv {
     width: 80% !important;
   }
 }

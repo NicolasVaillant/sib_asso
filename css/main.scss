@@ -515,7 +515,48 @@ body{
 
                     p{
                         text-align: justify;
-                        padding: 1em 0 3em 0;
+                        font-weight: initial!important;
+                        padding: 1em 0;
+                        line-height: 1.5;
+                    }
+                    h2{
+                        font-weight: bold;
+                        color: var(--blue_light);
+                    }
+                    ul{
+                        padding: 1em;
+                        margin: 1em 0;
+                        background: var(--blue_light);
+                        color: var(--w);
+                        border-radius: var(--border1);
+                        gap: 1em;
+                        display: flex;
+                        flex-direction: column;
+
+                        li{
+                            list-style: none;
+                            font-weight: initial!important;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: flex-start;
+                            gap: 1em;
+
+                            span{
+                                background: var(--blue_dark);
+
+                                aspect-ratio: 1;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                align-content: center;
+                                background: var(--blue_dark);
+                                width: fit-content;
+                                padding: 0.5em 1em;
+                                border-radius: var(--border1);
+
+                            }
+                        }
                     }
 
                     img{
@@ -558,7 +599,8 @@ body{
         width: 80% !important;
     }
     .scrollable--content,
-    #content_me .contentDiv{
+    #content_me .contentDiv,
+    #content_federation .contentDiv{
         width: 80% !important;
     }
 }
